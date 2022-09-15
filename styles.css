@@ -225,6 +225,9 @@ button {
     width: 100%;
   }
 
+  .navbar {
+    position: relative;
+  }
 
   .title {
     margin-top: 40px;
