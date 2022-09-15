@@ -62,8 +62,8 @@ body {
 
 #result {
   position: fixed;
-  top: 10%;
-  left: 10%;
+  top: 40%;
+  left: 40%;
   transform: translate(-50%, -50%);
   height: 250px;
   width: 400px;
@@ -202,9 +202,11 @@ button {
   .card {
     flex-direction: column;
   }
+
+
 }
 
-@media only screen and (min-width: 620px) and (max-width: 962px) {
+@media only screen and (min-width: 620px) and (max-width: 960px) {
   .box-container {
     padding: 0 20px;
     width: 100%;
