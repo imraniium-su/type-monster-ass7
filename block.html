@@ -138,7 +138,12 @@
                             browser creates a timer as part of the Web APIs. It is going to handle the countdown for
                             you. <br>7.The setTimeout(function cb1() { ... }) itself is complete and is removed from the
                             Call Stack. <br>8.console.log('Bye') is added to the Call Stack. <br>9.console.log('Bye') is
-                            executed. <br>10.console.log('Bye') is removed from the Call Stack. <br>
+                            executed. <br>10.console.log('Bye') is removed from the Call Stack. <br>11.After at least
+                            5000 ms, the timer completes and it pushes the cb1 callback to the Callback Queue.
+                            <br>12.The Event Loop takes cb1 from the Callback Queue and pushes it to the Call Stack.
+                            <br>13.cb1 is executed and adds console.log('cb1') to the Call Stack.
+                            <br>14.console.log('cb1') is executed. <br>15.console.log('cb1') is removed from the Call
+                            Stack. <br>16.cb1 is removed from the Call Stack.
                         </p>
                     </div>
                 </div>
@@ -147,26 +152,45 @@
                 <div class="card shadow p-3 mb-5 bg-body rounded">
 
                     <div class="card-body ">
-                        <h3 class="card-title">Templete string</h3>
-                        <p class="card-text">Template literals are literals delimited with backtick (`) characters,
-                            allowing for multi-line strings, for string interpolation with embedded expressions, and for
-                            special constructs called tagged templates.
+                        <h3 class="card-title">How many way to get undefined</h3>
+                        <p class="card-text">
+                            1.A declared variable but not yet assigned with a value (uninitialized) is by default
+                            undefined. <br>let myVariable;
+                            myVariable; // => undefined <br>2.Contrary, a const or let variable cannot be accessed
+                            before the declaration line — the variable is in a temporal dead zone before the
+                            declaration. And that's nice because you have less chance to access an undefined.
+                            <br>function bigFunction() {
+                            // code...
+                            myVariable; // => Throws 'ReferenceError: myVariable is not defined'
+                            // code...
+                            let myVariable = 'Initial value';
+                            // code...
+                            myVariable; // => 'Initial value'
+                            }
+                            bigFunction(); <br>3.When accessing a non-existing object property, JavaScript returns
+                            undefined. <br>let favoriteMovie = {
+                            title: 'Blade Runner'
+                            };
+                            favoriteMovie.actors; // => undefined. <br>4.You can use undefined and the strict equality
+                            and inequality operators to determine whether a variable has a value. In the following code,
+                            the variable x is not initialized, and the if statement evaluates to true. <br>let x;
+                            if (x === undefined) {
+                            // these statements execute
+                            } else {
+                            // these statements do not execute
+                            } <br>typeof operator and undefined <br>let x;
+                            if (typeof x === 'undefined') {
+                            // these statements execute
+                            } <br>void operator and undefined <br>let x;
+                            if (x === void 0) {
+                            // these statements execute
+                            }
 
-                            Template literals are sometimes informally called template strings, because they are used
-                            most commonly for string interpolation (to create strings by doing substitution of
-                            placeholders). However, a tagged template literal may not result in a string; it can be used
-                            with a custom tag function to perform whatever operations you want on the different parts of
-                            the template literal. <br> // Untagged, these create strings:
-                            `string text`
-
-                            `string text line 1
-                            string text line 2`
-
-                            `string text ${expression} string text`
-
-                            // Tagged, this calls the function "tagFunction" with the template as the
-                            // first argument and substitution values as subsequent arguments:
-                            tagFunction`string text ${expression} string text`</p>
+                            // y has not been declared before
+                            if (y === void 0) {
+                            // throws Uncaught ReferenceError: y is not defined
+                            }
+                        </p>
                     </div>
                 </div>
             </div>
