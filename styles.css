@@ -11,6 +11,38 @@ body {
   font-family: "Zilla Slab", serif;
 }
 
+/* hewader */
+.header {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.navbar {
+  overflow: hidden;
+  /* background-color: #333; */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-left: 40px;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  /*  */
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+
 .box-container {
   width: 70%;
   margin: 0 auto;
@@ -191,6 +223,14 @@ button {
     padding: 0 20px;
     width: 100%;
   }
+
+
+
+  .title {
+    margin-top: 40px;
+  }
+
+
 
   #histories {
     grid-template-columns: repeat(1, 1fr);
