@@ -11,7 +11,7 @@ body {
   font-family: "Zilla Slab", serif;
 }
 
-/* hewader */
+/* header */
 .header {
   margin-bottom: 20px;
   margin-top: 20px;
@@ -42,6 +42,7 @@ body {
   color: black;
 }
 
+/* main work */
 
 .box-container {
   width: 70%;
